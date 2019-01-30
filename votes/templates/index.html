@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  this is the index page
+{% endblock %}
+
+
+{% block body %}
+  <ol>
+  {% for post in posts %}
+  <div class="row" style="background-color:lightblue; height:150px; width:500px;">
+	  <li>
+		  <a href = "{% url 'candidate:detail' candidate.id %}">
+        Firstname: {{candidate.firstname}} </br>
+        Lastname: {{candidate.lastname}} </br>
+        Position: {{candidate.position}} </br>
+        Platform: {{candidate.platform}} </a>
+	  </li>
+  </div>
+
+  <br/>
+      {% endfor %}
+  </ol>
+
+  
+
+{% endblock %}
